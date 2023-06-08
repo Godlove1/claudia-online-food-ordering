@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+/* Firefox */
+.cats {
+    scrollbar-width: thin;
+    scrollbar-color: red;
+  }
+  
+  /* Chrome, Edge, and Safari */
+  .cats::-webkit-scrollbar {
+    width: 2px;
+    height: 2px;
+  }
+  @media(min-width:665px){
+    .cats::-webkit-scrollbar {
+      width: 2px;
+      height: 10px;
+      border-radius: 50%;
+    } 
+  }
+  
+  .cats::-webkit-scrollbar-track {
+    background: silver;
+    border-radius: 1px;
+  }
+  
+  .cats::-webkit-scrollbar-thumb {
+    background: black;
+  }
+
+
+
+
+
+@layer utilities {
+    @variants responsive {
+       
+        .m3 {
+            column-gap: 1em;
+            column-count: 3;
+        }
+
+        .mansonry {
+            column-gap: 1em;
+            column-count: 2;
+        }
+        .mv{
+            column-gap: 1em;
+            column-count: 4;
+        }
+
+        .break-inside {
+            break-inside: avoid;
+        }
+
+    }
+}
