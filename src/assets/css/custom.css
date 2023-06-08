@@ -1,9 +1,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Caesar+Dressing&family=Nunito+Sans:wght@200;300&family=Raleway:wght@200;500&display=swap');
 
-.log p{
-  font-family: 'Caesar Dressing', cursive;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+
 
 .name,td,th{
   font-family: 'Raleway', sans-serif;
@@ -20,25 +20,25 @@ td{
 }
 
 p{
-  font-family: 'Nunito Sans', sans-serif;
-  font-weight: 400;
-  font-size: 15px;
+  font-family: 'Poppins', sans-serif;
+  /* font-weight: 400; */
+  /* font-size: 15px; */
 }
 
 .services p{
   font-size: 12px;
 }
-
+/* 
 .categories p{
   font-family: 'Raleway', sans-serif;
   font-weight: lighter;
-}
-
+} */
+/* 
 
 .underline {
   text-decoration-color:#FFD700;
   text-decoration: underline;
-}
+} */
 
 .product {
     width: 100%;

@@ -9,12 +9,12 @@ const search_bar=document.querySelector('#search_bar');
 
 
 const openNav=()=>{
-mobicontainer.style.width='100%';
+mobicontainer.style.height='100%';
 }
 
 
 const closeNav=()=>{
-    mobicontainer.style.width='0';
+    mobicontainer.style.height='0';
     }
 
     const openSearch=()=>{
@@ -24,3 +24,14 @@ const closeNav=()=>{
     const closeSearch=()=>{
         search_bar.style.height="0";
     }
+
+
+    // Show the spinner when the page starts loading
+  window.addEventListener('loadstart', function() {
+    document.getElementById('spinner').classList.remove('hidden');
+  });
+
+  // Hide the spinner when the page has finished loading
+  window.addEventListener('load', function() {
+    document.getElementById('spinner').classList.add('hidden');
+  });
