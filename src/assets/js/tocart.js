@@ -11,7 +11,7 @@ $(document).ready(function(){
             data: form_data
         }).done(function(data){ //on Ajax success
             $(".cart-info").html(data.items); //total items in cart-info element
-            button_content.html('ADD TO CART'); //reset button text to original text
+            button_content.html('<i class="fa-solid fa-bag-shopping text-xl"></i>'); //reset button text to original text
             alert("Item added to Cart!"); //alert user
             if($(".shopping-cart-box").css("display") == "block"){ //if cart box is still visible
                 $(".cart-box").trigger( "click" ); //trigger click to update the cart box.

@@ -8,7 +8,7 @@ $db_name            = 'sheyonce'; //MySql database name
 $db_host            = 'localhost'; //MySql hostname or IP
 
 $currency			='FCFA '; //currency symbol
-// $shipping_cost		= 500; //shipping cost
+$shipping_cost		= 500; //shipping cost
 /*$taxes				= array( //List your Taxes percent here.
 							'VAT' => 0,
 							'Service Tax' => 0,
