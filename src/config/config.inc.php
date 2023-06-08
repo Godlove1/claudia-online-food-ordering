@@ -4,7 +4,7 @@
 
 $db_username        = 'root'; //MySql database username
 $db_password        = ''; //MySql dataabse password
-$db_name            = 'sheyonce'; //MySql database name
+$db_name            = 'claudia'; //MySql database name
 $db_host            = 'localhost'; //MySql hostname or IP
 
 $currency			='FCFA '; //currency symbol

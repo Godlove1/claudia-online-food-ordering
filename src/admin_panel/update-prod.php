@@ -21,7 +21,7 @@ ob_start();
 
         //Get the Individual Values of Selected Food
         // $id = $row['product_code'];
-        //  $title = $row['product_name'];
+         $title = $row['product_name'];
          $price = $row['product_price'];
          $current_images_row = $row['product_image'];
         $disp_cur_images =explode(",", $row['product_image']);
@@ -29,9 +29,9 @@ ob_start();
         $promo = $row['promo'];
         $promo_p = $row['product_pprice'];
         $categ = $row['product_category'];
-        $tag = $row['best_or_new'];
-       $descc = $row['product_desc'];
-       $seoo = $row['product_seo'];
+        // $tag = $row['best_or_new'];
+    //    $descc = $row['product_desc'];
+    //    $seoo = $row['product_seo'];
 
 
     } else{
@@ -71,15 +71,15 @@ ob_start();
         //1. Get all the details from the form
     $id = $_POST['id'];
     $received_cur_images = $_POST['current_images'];
-    // $pname = $_POST['name'];
+    $pname = $_POST['name'];
     $price = $_POST['price'];
     $promo = $_POST['promo'];
     $promop = $_POST['pprice'];
    $category = $_POST['type'];
    $Available = $_POST['Available'];
-   $tagn = $_POST['tag'];
-   $seo = mysqli_real_escape_string($conn,$_POST['seo']);
-   $desc = mysqli_real_escape_string($conn,$_POST['desc']);
+//    $tagn = $_POST['tag'];
+//    $seo = mysqli_real_escape_string($conn,$_POST['seo']);
+//    $desc = mysqli_real_escape_string($conn,$_POST['desc']);
 
        // Check if new images have been uploaded
 if (!empty($_FILES['images']['name'][0])) {
@@ -125,14 +125,15 @@ if (!empty($_FILES['images']['name'][0])) {
 }
         // Update product data in database
         $qry = "UPDATE products_list SET
+        product_name = '$pname',
         product_price = '$price',
         promo = '$promo',
         product_pprice = '$promop',
         product_category = '$category',
-        product_seo = '$seo',
-        product_desc = '$desc',
+        -- product_seo = '$seo',
+        -- product_desc = '$desc',
         available = '$Available',
-        best_or_new = '$tagn',
+        -- best_or_new = '$tagn',
         Product_image = '$compressed_images_string'
         WHERE product_code = '$id'";
     
@@ -183,19 +184,19 @@ include 'partials/header-add.php';
 
 
 <section class="mb-[100px] md:flex justify-center items-center">
-    <form  method="POST" class="p-3 md:w-1/2" enctype="multipart/form-data">
+    <form  method="POST" class="p-2 md:w-1/2" enctype="multipart/form-data">
 
-        <div class="border  p-2">
-                <!-- <div class="flex items-center">
-                   <p class="font-medium">Name: </p>
-                     <input class="focus:outline-none border-2  font-medium  rounded ml-2 text-sm p-1" class="focus:outline-none border rounded ml-2 text-sm p-1" type="text" name="name" value="<?php //echo $title; ?>" >
-                </div> -->
+        <div class="border p-2 ">
+                <div class="flex items-center mb-2">
+                <label class="font-medium block mb-1 text-gray-500">Name : </label>
+                     <input class="focus:outline-none border-2  font-medium  rounded ml-2 text-sm p-1"  type="text" name="name" value="<?php echo $title; ?>" >
+                </div>
 
 
                 <div class=" mb-1 ">
                 <div class="flex items-center">
-                   <lanel class="font-medium block mb-1 text-gray-500">Price : </label>
-                     <input class="focus:outline-none border-2  font-medium  rounded ml-2 text-sm p-1" class="focus:outline-none border rounded ml-2 text-sm p-1" type="text" name="price" value="<?php echo $price; ?>" >
+                   <label class="font-medium block mb-1 text-gray-500">Price : </label>
+                     <input class="focus:outline-none border-2  font-medium  rounded ml-2 text-sm p-1"  type="text" name="price" value="<?php echo $price; ?>" >
                 </div>
             </div>
 
@@ -241,14 +242,14 @@ echo "<option value='0'>Category Not Available.</option>";
         <input <?php if($status==0) {echo "checked";} ?> class="mx-1" type="radio" value="0" name="Available"/><span>No</span>
       </div>
 
-      <div  class="mt-4">
+      <!-- <div  class="mt-4">
         <label class="mr-2 text-gray-500" for="forms-labelOverInputCode">Select tag</label>
        <div  class=" flex items-center">
-       <input <?php if($tag==0) {echo "checked";} ?> class="mx-1" type="radio" value="0" name="tag" checked/><span>General</span>
-       <input <?php if($tag==1) {echo "checked";} ?> class="ml-2" type="radio" value="1" name="tag"/><span>New Arrival</span>
-       <input <?php if($tag==2) {echo "checked";} ?> class="ml-2" type="radio" value="2" name="tag"/><span>Best Seller</span>
+       <input <?php// if($tag==0) {echo "checked";} ?> class="mx-1" type="radio" value="0" name="tag" checked/><span>General</span>
+       <input <?php// if($tag==1) {echo "checked";} ?> class="ml-2" type="radio" value="1" name="tag"/><span>New Arrival</span>
+       <input <?php// if($tag==2) {echo "checked";} ?> class="ml-2" type="radio" value="2" name="tag"/><span>Best Seller</span>
        </div>
-      </div>
+      </div> -->
 
 
       <div class="my-3">
@@ -273,18 +274,18 @@ echo "<option value='0'>Category Not Available.</option>";
                       file:bg-black file:text-white"  type="file" name="images[]"  multiple>
                  </div>
 
-                 
+<!--                  
       <div class="mt-4">
         <label class="mr-2 text-gray-500"  for="forms-labelOverInputCode">Product SEO <span class="text-xs italic">(keywords only,comma separated words)</span> </label>
     
-        <input name="seo" value="<?php echo $seoo; ?>" class="w-full h-10 px-3 text-base placeholder-gray-300 border border-slate-400 rounded-lg focus:outline-none"/>
+        <input name="seo" value="<?php //echo $seoo; ?>" class="w-full h-10 px-3 text-base placeholder-gray-300 border border-slate-400 rounded-lg focus:outline-none"/>
       </div>
 
       <div class="mt-4">
         <label class="my-2 text-gray-500"  for="forms-labelOverInputCode">General product description <span class="text-xs italic">(optional)</span></label>
     
-        <textarea  name="desc" class="w-full h-10 px-3 text-base placeholder-gray-300 border border-slate-400 rounded-lg focus:outline-none"><?php echo $descc; ?></textarea>
-      </div>
+        <textarea  name="desc" class="w-full h-10 px-3 text-base placeholder-gray-300 border border-slate-400 rounded-lg focus:outline-none"><?php //echo $descc; ?></textarea>
+      </div> -->
 
      
 

@@ -36,9 +36,9 @@ if(isset($_POST['add'])) {
   $price = $_POST['price'];
   $category = $_POST['type'];
   $Available = $_POST['Available'];
-  $tag = $_POST['tag'];
-  $seo = mysqli_real_escape_string($conn,$_POST['seo']);
-  $desc = mysqli_real_escape_string($conn,$_POST['desc']);
+  // $tag = $_POST['tag'];
+  // $seo = mysqli_real_escape_string($conn,$_POST['seo']);
+  // $desc = mysqli_real_escape_string($conn,$_POST['desc']);
 
   // Upload the Image if selected
  $countfiles = count($_FILES['images']['name']);
@@ -81,10 +81,7 @@ $compressed_images_string = implode(",", $compressed_images);
   $sql2 = "INSERT INTO products_list SET
    product_price = $price,
         product_category = '$category',
-        product_seo='$seo',
-        product_desc='$desc',
         available = '$Available',
-        best_or_new = $tag,
         Product_image = '$compressed_images_string'
         ";
   
@@ -101,7 +98,7 @@ $compressed_images_string = implode(",", $compressed_images);
         <div class="py-1"><svg class="fill-current h-6 w-6 text-green-500 mr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"/></svg></div>
         <div class="w-full"> 
           <p class="font-bold">SUCCESS!</p>
-          <p class="text-sm">Product Successfully added.</p>
+          <p class="text-sm">Food Successfully added.</p>
         </div>
       </div>
       </div>
@@ -194,20 +191,20 @@ $title = $row['cat_name'];?>
         <input class="mx-1" type="radio" value="0" name="Available"/><span>No</span>
       </div>
       
-      <div  class="">
+      <!-- <div  class="">
         <label class="mr-2 font-medium" for="forms-labelOverInputCode">Tag as :</label>
        <div  class=" flex items-center">
        <input class="mx-1" type="radio" value="0" name="tag" checked/><span>General</span>
         <input class="ml-2" type="radio" value="1" name="tag"/><span>New Arrival</span>
         <input class="ml-2" type="radio" value="2" name="tag"/><span>Best Seller</span>
        </div>
-      </div>
+      </div> -->
 
-      <div class="">
+      <!-- <div class="">
         <label class="mr-2 font-medium"  for="forms-labelOverInputCode">Product SEO <span class="text-xs italic">(keywords only,comma separated words)</span> </label>
     
         <input name="seo" class="w-full h-10 px-3 text-base placeholder-gray-300 border border-slate-400 rounded-lg focus:outline-none"/>
-      </div>
+      </div> -->
 
       <div class="">
         <label class="mr-2 font-medium" for="forms-labelOverInputCode">Select Image(s) </label>
@@ -215,12 +212,12 @@ $title = $row['cat_name'];?>
      <input class="w-full h-10 px-3 focus:outline-none file:border-0  file:rounded-full file:text-sm file: file:bg-teal-500 file:text-white" type="file" name="images[]" id="avatars" multiple required>
      </div>
       </div>
-
+<!-- 
       <div class="">
         <label class="mr-2 font-medium"  for="forms-labelOverInputCode">General product description <span class="text-xs italic">(optional)</span> </label>
     
         <textarea  name="desc" class="w-full h-10 px-3 text-base placeholder-gray-300 border border-slate-400 rounded-lg focus:outline-none"></textarea>
-      </div>
+      </div> -->
 
      
 

@@ -20,7 +20,7 @@ while($row=mysqli_fetch_assoc($res))
 {//get the values from individual columns
     $id = $row['product_code'];
     $price = $row['product_price'];
-    // $title = $row['product_name'];
+    $title = $row['product_name'];
     $prod_imgs = $row['product_image'];
     $availability = $row['available'];
     $prod_img =explode(",",$prod_imgs);
@@ -32,7 +32,9 @@ while($row=mysqli_fetch_assoc($res))
                       <td class="w-10">
                       <?php echo $sn++; ?>
                       </td>
-  
+                      <td class="w-20">
+                      <?php echo $title; ?>
+                    </td>
                       <td class="w-20">
                       <?php
                  //CHeck whether we have image or not
@@ -83,7 +85,7 @@ while($row=mysqli_fetch_assoc($res))
 {//get the values from individual columns
     $id = $row['product_code'];
     $price = $row['product_price'];
-    // $title = $row['product_name'];
+    $title = $row['product_name'];
     $prod_imgs = $row['product_image'];
      $availability = $row['available'];
     $prod_img =explode(",",$prod_imgs);
@@ -95,7 +97,9 @@ while($row=mysqli_fetch_assoc($res))
                     <td class="w-10">
                     <?php echo $sn++; ?>
                     </td>
-
+                    <td class="w-20">
+                      <?php echo $title; ?>
+                    </td>
                     <td class="w-20">
                     <?php
                //CHeck whether we have image or not

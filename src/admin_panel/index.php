@@ -55,7 +55,7 @@ if (isset($_GET['page_no']) && $_GET['page_no']!="") {
                         echo $count1;
                     ?>)
             </h1>
-            <p>Total products</p>
+            <p>Total dishes</p>
             </a>
         </div>
 
@@ -97,15 +97,15 @@ foreach ($db->query($get_cats) as $cats) {
 <div class="filter my-4 px-2 w-full flex justify-around items-center lg:px-[100px]">
  <!-- add button -->
  <div class="my-4 add__btn flex justify-around items-center " >
- <a href="add" class="text-white bg-teal-500 p-2 rounded-sm font-semibold"><span>New Product</span><i class="fa-solid fa-plus ml-2"></i></a>
+ <a href="add" class="text-white bg-teal-500 p-2 rounded-sm font-semibold"><span>Add Food</span><i class="fa-solid fa-plus ml-2"></i></a>
     </div>
 
 <form  method="post" action="aux_cat" onchange="submit()" >
     <select name='other_cat' class="text-center border-2 border-gray-500 rounded-md p-2 ">
         <option value="Default sorting">--Select--</option>
         <option value="0">Unavailable</option>
-        <option value="1">New Arrivals</option>
-        <option value="2">Best Sellers</option>
+        <!-- <option value="1">New Arrivals</option>
+        <option value="2">Best Sellers</option> -->
     </select>
 </form>
 </div>
@@ -120,6 +120,7 @@ foreach ($db->query($get_cats) as $cats) {
         <thead>
             <tr>
                 <th>S.N</th>
+                <th>Name</th>
                 <th>Image</th>
                 <th>Price</th>
                 <th>Actions</th>
