@@ -1,5 +1,5 @@
 <!-- prod_variant_1 -->
-<div class="prod_wrapper rounded  shadow-md overflow-hidden transition-all duration-200 ease-linear hover:shadow-none ">
+<div data-aos="zoom-in-up" class="product load-hidden rounded  shadow-md overflow-hidden transition-all duration-200 ease-linear hover:shadow-none ">
     <!-- image -->
     <div class="image_wrapper ">
         <a href="#" class="relative">

@@ -1342,6 +1342,11 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-red-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(153 27 27 / var(--tw-bg-opacity));
+}
+
 .bg-opacity-30 {
   --tw-bg-opacity: 0.3;
 }
@@ -1391,6 +1396,10 @@ video {
 
 .fill-current {
   fill: currentColor;
+}
+
+.fill-black {
+  fill: #000;
 }
 
 .object-contain {

@@ -12,11 +12,14 @@ include 'cart_process.php';
 <link rel="stylesheet" href="assets/css/output.css">
 <link rel="stylesheet" href="assets/css/custom.css">
 <link rel="stylesheet" href="assets/css/hover.css">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.ico">
 <!-- FONTAWESOME -->
 <script src="https://kit.fontawesome.com/3ecb4095fb.js" crossorigin="anonymous"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
   <!-- loadmore script -->
  <script src="assets/js/tocart.js"></script>
 

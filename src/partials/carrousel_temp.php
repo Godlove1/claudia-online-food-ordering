@@ -1,5 +1,5 @@
 <!-- prod_variant_1 -->
-<div class="prod_wrapper w-[300px] rounded-md  shadow-sm overflow-hidden hover:shadow-none ">
+<div data-aos="flip-left" class="prod_wrapper w-[300px] rounded-md  shadow-sm overflow-hidden hover:shadow-none ">
     <!-- image -->
     <div class="image_wrapper ">
         <a href="#" class="relative">

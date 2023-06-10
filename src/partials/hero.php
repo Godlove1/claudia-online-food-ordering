@@ -10,7 +10,7 @@
                 No more waiting in line. Order your favorite food with just a few clicks, customize your order, and have it delivered to you. <br> <br> Satisfy your cravings your way👍🔥. <br> <br> Order now and experience the ultimate dining revolution!.
               </p>
               <a class="hvr-push inline-block w-1/2 md:w-auto mb-4 md:mr-6 p-2 text-sm font-bold uppercase border-2 border-transparent bg-red-500 rounded hover:bg-red-100 hover:text-red-500 text-white transition duration-300"
-                href="restaurant.html">Order Now😋!</a>
+                href="restaurant">Order Now😋!</a>
             </div>
           </div>
         </div>

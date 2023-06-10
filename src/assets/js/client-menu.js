@@ -26,15 +26,17 @@ const closeNav=()=>{
     }
 
 
-    // Show the spinner when the page starts loading
-  window.addEventListener('loadstart', function() {
-    document.getElementById('spinner').classList.remove('hidden');
-  });
+  // Show the spinner when the page starts loading
+window.addEventListener('loadstart', function() {
+  document.getElementById('spinner').classList.remove('hidden');
+});
 
-  // Hide the spinner when the page has finished loading
-  window.addEventListener('load', function() {
+// Hide the spinner after 3 seconds
+window.addEventListener('load', function() {
+  setTimeout(function() {
     document.getElementById('spinner').classList.add('hidden');
-  });
+  }, 3000);
+});
 
 
   // Get all the input groups on the page
