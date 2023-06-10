@@ -11,6 +11,7 @@ include 'cart_process.php';
     <!-- css -->
 <link rel="stylesheet" href="assets/css/output.css">
 <link rel="stylesheet" href="assets/css/custom.css">
+<link rel="stylesheet" href="assets/css/hover.css">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.ico">
 <!-- FONTAWESOME -->
 <script src="https://kit.fontawesome.com/3ecb4095fb.js" crossorigin="anonymous"></script>
@@ -159,7 +160,7 @@ if($cur_page == 'restaurant'){
 <div class="cart flex justify-center items-center">
 
 <div class="cartert flex mr-4">
-<a href="#" title="cart" class="cart-box"><i class="fa-solid fa-bag-shopping hover:text-red-500 text-xl"></i></i> </a>
+<a href="#" title="cart" class="cart-box"><i class="hvr-pop fa-solid fa-bag-shopping hover:text-red-500 text-xl"></i></i> </a>
     <p  class="cart-info cart-total  bg-red-500 text-white w-4 h-4 text-center rounded-md  text-xs">
                    <?php
             if(isset($_SESSION["products"])){
@@ -240,11 +241,11 @@ while($row = $get_cats->fetch_assoc()) {
  $c_name = $row['cat_name'];
   ?> 
 
-<li class="border-b  p-2 transition-all ease-in-out hover:bg-red-500 hover:text-white  name"><a href="restaurant?<?php echo $c_name.''.md5($c_name); ?>&cat=<?php echo $c_id; ?>" class="capitalize"><?php echo $c_name; ?></a></li>
+<li class="hvr-bounce-to-right border-b  p-2  name"><a href="restaurant?<?php echo $c_name.''.md5($c_name); ?>&cat=<?php echo $c_id; ?>" class="capitalize"><?php echo $c_name; ?></a></li>
 
  <?php } ?> 
 
-<li class="w-full flex justify-center hover:bg-red-200 hover:text-white transition-all ease-out mt-4 items-center text-center "><a href="admin_panel" class="text-sm uppercase  border p-2" target="_blank" class="capitalize name">Log in</a></li>
+<li class="hvr-bounce-to-right w-full flex justify-center  mt-4 items-center text-center "><a href="admin_panel" class="text-sm uppercase  border p-2" target="_blank" class="capitalize name">Log in</a></li>
 </ul>
 
       </div>

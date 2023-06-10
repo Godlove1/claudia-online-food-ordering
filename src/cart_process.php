@@ -71,7 +71,7 @@ $cart_box.='<tr class="cart-table__row">
 <td class="p-1 tex-sm text-center border border-black">'.$currency.number_format($product_price * $product_qty,1).'</td>
 <td class="p-1 tex-sm text-center border border-black">
 <a href="#" class="remove-item" data-code="'.$product_code.'">
-<i class="fa-solid fa-trash ml-2 text-red-500 transition-all ease-in-out">
+<i class="fa-solid fa-trash ml-2 text-red-500 hvr-buzz">
 </i></a>
 </td>
 </tr>';
@@ -86,7 +86,7 @@ $cart_box.='<tr class="cart-table__row">
 
 	</div>
 	   ';
-		$cart_box .= '<div class="mt-4 name cart-products-total w-full flex justify-end items-center">Total : <span class="ml-2 font-bold hover:bg-red-500  transition-all ease-in-out border px-2">'.$currency.number_format($total,1).'</span> <a href="cart" title="Review Cart and Check-Out" class="ml-4 bg-red-500 text-white  p-1 transition-all ease-in-out">Check-out<i class="fa-solid fa-cash-register ml-2 "></i></a></div>';
+		$cart_box .= '<div class="mt-4 name cart-products-total w-full flex justify-end items-center">Total : <span class="hvr-shutter-out-horizontal cursor-pointer ml-2 font-bold hover:bg-red-500  border px-2">'.$currency.number_format($total,1).'</span> <a href="cart" title="Review Cart and Check-Out" class="hvr-radial-out ml-4 bg-red-500 text-white  p-1 transition-all ease-in-out">Check-out<i class="fa-solid fa-cash-register ml-2 "></i></a></div>';
 		die($cart_box); //exit and output content
 	}else{
 		die("<p class='w-full text-center my-4'>Your Cart is empty</p"); //we have empty cart

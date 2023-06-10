@@ -68,14 +68,14 @@
         <input name="status" type="hidden" value='<?php echo $promo ?>'>
                 <!-- cta_1 -->
                 <div class="cta w-full">
-                        <a href="" class="text-sm flex justify-center items-center bg-black p-2 text-white rounded-tl-md rounded-bl-md">
+                        <a href="" class="hvr-bounce-to-right text-sm flex justify-center items-center bg-black p-2 text-white rounded-tl-md rounded-bl-md">
                             <p>Order </p><i class="fa-brands fa-whatsapp ml-2"></i>
                         </a>
                 </div>
                  <!-- cta_2 -->
                  <div class="cta w-1/3">
                     <div class="ctar w-full">
-         <button type="submit" class="w-full flex justify-center items-center bg-red-500 p-2 font-bold text-white rounded-tr-md rounded-br-md"><i class="fa-solid fa-bag-shopping text-xl"></i></button>
+         <button type="submit" class="hvr-bounce-to-top w-full flex justify-center items-center bg-red-500 p-2 font-bold text-white rounded-tr-md rounded-br-md"><i class="fa-solid fa-bag-shopping text-xl"></i></button>
                     </div>
                 </div>
 

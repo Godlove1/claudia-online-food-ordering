@@ -60,7 +60,7 @@ foreach ($db->query($get_cats) as $cats) {
     ?>
 
     <!-- cateogry template -->
-    <div class="cat-temp-wrapper relative <?=($acat == $cid)?'border-red-500':''?> border  shadow-lg  w-[100px] h-[100px] rounded-full overflow-hidden">
+    <div class="hvr-grow-rotate cat-temp-wrapper relative <?=($acat == $cid)?'border-red-500':''?> border  shadow-lg  w-[100px] h-[100px] rounded-full overflow-hidden">
         <a href="restaurant?cat=<?php echo $cid;?>">
         <div class="cat-bg w-full h-full ">
       <img src="assets/images/cats/<?php echo $ca_i;?>" alt="<?php echo ucwords($cname) ?>" class="w-full h-full object-cover">
@@ -84,7 +84,7 @@ foreach ($db->query($get_cats) as $cats) {
      $ca_i=$cats['cat_image'];
 ?>
     <!-- cateogry template -->
-    <div class="cat-temp-wrapper relative <?=($acat == $cid)?'border-red-500':''?> border  shadow-lg  w-[100px] h-[100px] rounded-full overflow-hidden">
+    <div class="hvr-grow-rotate cat-temp-wrapper relative <?=($acat == $cid)?'border-red-500':''?> border  shadow-lg  w-[100px] h-[100px] rounded-full overflow-hidden">
         <a href="restaurant?cat=<?php echo $cid;?>">
         <div class="cat-bg w-full h-full ">
       <img src="assets/images/cats/<?php echo $ca_i;?>" alt="<?php echo ucwords($cname) ?>" class="w-full h-full object-cover">

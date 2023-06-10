@@ -62,7 +62,7 @@ while($row = $resu->fetch_assoc()) {
 
 
     <div class="w-full flex justify-center items-center my-12 ">
-        <a href="restaurant" class="bg-black shadow-md text-white rounded-md font-semibold p-3 w-1/3 text-center hover:text-red-500 transition-all ease-linear">See More...</a>
+        <a href="restaurant" class="hvr-wobble-top bg-black shadow-md text-white rounded-md font-semibold p-3 w-1/3 text-center hover:text-red-500 transition-all ease-linear">See More...</a>
       </div>
 
 
@@ -153,7 +153,7 @@ while($row = $resu->fetch_assoc()) {
 
 
     <div class="w-full flex justify-center items-center my-12 ">
-        <a href="restaurant" class="bg-black shadow-md text-white rounded-md font-semibold p-3 w-1/3 text-center hover:text-red-500 transition-all ease-linear">See More...</a>
+        <a href="restaurant" class="hvr-wobble-top bg-black shadow-md text-white rounded-md font-semibold p-3 w-1/3 text-center hover:text-red-500 transition-all ease-linear">See More...</a>
       </div>
 
       <?php

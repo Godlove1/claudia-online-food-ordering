@@ -64,7 +64,7 @@ $pnames.="%0A............................%0AQty:".$product_qty."%0AFood:".$produ
 	<p>Min.Delivery Fee : <span class="font-bold">'.$shipping_cost." ".$currency.'</span></p>
 	</div>
    ';
-	$cart_box .="<div class='w-full flex justify-center items-center p-2 mt-12'>
+	$cart_box .="<div class='hvr-float-shadow w-full flex justify-center items-center p-2 mt-12'>
  <div class='bg-green-500 shadow-lg text-white p-2 flex justify-center items-center text-xl font-bold  hover:bg-white hover:text-green-500 hover:border-green-500 border transition-all duration-300 ease-in'>
  <a target='_blank' href='https://wa.me/237694654634?text=Hi!,%20I%20will%20like%20to%20Order:$pnames%0A............................................%0ATotal::%20$currency$gt%0A' class=\"checkout price \" >Check out via whatsapp</a><i class=\"fa-brands fa-whatsapp ml-2\"></i>
  </div>

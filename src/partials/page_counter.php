@@ -23,7 +23,7 @@
                   </li>";
           } else {
             echo "<li>
-                    <button class='block h-8 w-8 rounded border hover:bg-black hover:text-white border-gray-100 bg-white text-center leading-8 text-gray-900'>
+                    <button class='hvr-wobble-top block h-8 w-8 rounded border hover:bg-black hover:text-white border-gray-100 bg-white text-center leading-8 text-gray-900'>
                       <a href='?page_no=$counter'>$counter</a>
                     </button>
                   </li>";
@@ -41,7 +41,7 @@
                     </li>";
             } else {
               echo "<li>
-                      <button class='block h-8 w-8 hover:bg-black hover:text-white rounded border border-gray-100 bg-white text-center leading-8 text-gray-900'>
+                      <button class='hvr-wobble-top block h-8 w-8 hover:bg-black hover:text-white rounded border border-gray-100 bg-white text-center leading-8 text-gray-900'>
                         <a href='?page_no=$counter'>$counter</a>
                       </button>
                     </li>";
@@ -65,7 +65,7 @@
                     </li>";
             } else {
               echo "<li>
-                      <buttonclass='block h-8 w-8 hover:bg-black hover:text-white rounded border border-gray-100 bg-white text-center leading-8 text-gray-900'>
+                      <buttonclass='hvr-wobble-top block h-8 w-8 hover:bg-black hover:text-white rounded border border-gray-100 bg-white text-center leading-8 text-gray-900'>
                         <a href='?page_no=$counter'>$counter</a>
                       </button>
                     </li>";
