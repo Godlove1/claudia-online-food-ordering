@@ -54,9 +54,16 @@ if(isset($_POST["load_cart"]) && $_POST["load_cart"]==1){
 
 			//set variables to use them in HTML content below
 			$product_name = $product["product_name"];
-			$product_price = $product["product_price"];
+			$promo_price = $product["promo_price"];
 			$product_code = $product["product_code"];
 			$product_qty = $product["product_qty"];
+			$promo = $product['status'];
+
+			if($promo == 0){
+				$product_price = $product["product_price"];
+			}else{
+				$product_price = $promo_price;
+			}
 
 $cart_box.='<tr class="cart-table__row">
 <td class="p-1 tex-sm text-center border border-black"> '. $product_qty.'</td>

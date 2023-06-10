@@ -30,10 +30,17 @@ if(isset($_SESSION["products"]) && count($_SESSION["products"])>0){ //if we have
 	foreach($_SESSION["products"] as $product){ //loop though items and prepare html content
 
 		//set variables to use them in HTML content below
-		$product_name = $product["product_name"];
-		$product_price = $product["product_price"];
-		$product_code = $product["product_code"];
-		$product_qty = $product["product_qty"];
+		    $product_name = $product["product_name"];
+			$promo_price = $product["promo_price"];
+			$product_code = $product["product_code"];
+			$product_qty = $product["product_qty"];
+			$promo = $product['status'];
+
+			if($promo == 0){
+				$product_price = $product["product_price"];
+			}else{
+				$product_price = $promo_price;
+			}
 
 		$item_price = number_format($product_price * $product_qty,0);
  
@@ -42,7 +49,7 @@ $cart_box.='<tr class="cart-table__row">
 <td class="p-1 tex-sm text-center border border-black"> '.$product_name.'</td>
 <td class="p-1 tex-sm text-center border border-black">'.$currency.number_format($product_price * $product_qty,1).'</td>
 </tr>';
-$pnames.="%0AQty:".$product_qty.", Size:".$product_name.", Item_Name:".$product_name.", Price:"."$currency$item_price%0A";
+$pnames.="%0A............................%0AQty:".$product_qty."%0AFood:".$product_name."%0APrice:"."$currency$item_price";
 
 		$subtotal = ($product_price * $product_qty);
 		$total = ($total + $subtotal);
@@ -59,7 +66,7 @@ $pnames.="%0AQty:".$product_qty.", Size:".$product_name.", Item_Name:".$product_
    ';
 	$cart_box .="<div class='w-full flex justify-center items-center p-2 mt-12'>
  <div class='bg-green-500 shadow-lg text-white p-2 flex justify-center items-center text-xl font-bold  hover:bg-white hover:text-green-500 hover:border-green-500 border transition-all duration-300 ease-in'>
- <a target='_blank' href='https://wa.me/971508322923?text=Hi!,%20I%20will%20like%20to%20buy:%0A$pnames%0ATotal::%20$currency$gt%0A' class=\"checkout price \" >Check out via whatsapp</a><i class=\"fa-brands fa-whatsapp ml-2\"></i>
+ <a target='_blank' href='https://wa.me/237694654634?text=Hi!,%20I%20will%20like%20to%20Order:$pnames%0A............................................%0ATotal::%20$currency$gt%0A' class=\"checkout price \" >Check out via whatsapp</a><i class=\"fa-brands fa-whatsapp ml-2\"></i>
  </div>
   </div>
   </div>";

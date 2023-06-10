@@ -58,6 +58,9 @@ ob_start();
         case 'image/gif':
             $image = imagecreatefromgif($source);
             break;
+        case 'image/webp':
+                $image = imagecreatefromwebp($source);
+                break;
         default:
             $image = imagecreatefromjpeg($source);
     }
@@ -95,9 +98,9 @@ if (!empty($_FILES['images']['name'][0])) {
         $file_type = $_FILES['images']['type'][$i];
 
         // Check if the file is a valid image type
-        if ($file_type != 'image/jpeg' && $file_type != 'image/png' && $file_type != 'image/gif') {
+        if ($file_type != 'image/jpeg' && $file_type != 'image/png' && $file_type != 'image/gif'  && $file_type != 'image/webp') {
             // Display an error message and stop processing
-            $_SESSION['login'] = "<div class='text-center text-red-500 font-medium my-8'>Invalid file type. Please upload JPEG, PNG, or GIF images only.</div>";
+            $_SESSION['login'] = "<div class='text-center text-red-500 font-medium my-8'>Invalid file type. Please upload JPEG, PNG, Webp or GIF images only.</div>";
             // echo '<script>alert("Invalid file type. Please upload JPEG, PNG, or GIF images only.")</script>';
              header('location:update-prod?id='.$id.'');
             exit();

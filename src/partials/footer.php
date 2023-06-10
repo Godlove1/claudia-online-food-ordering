@@ -151,20 +151,13 @@ style="background-image: url(https://images.pexels.com/photos/7426867/pexels-pho
   
         <li>
           <a
-            href="/"
+          href="https://wa.me/237694654634"
             rel="noreferrer"
             target="_blank"
             class=" transition hover:text-gray-700/75"
           >
             <span class="sr-only">Whatsapp</span>
-            <svg
-              class="h-6 w-6"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-            <path d="M12,0C5.373,0,0,5.373,0,12s5.373,12,12,12s12-5.373,12-12S18.627,0,12,0z M9.172,16.172c-0.115,0.115-0.268,0.175-0.427,0.172 c-0.159,0.003-0.311-0.057-0.427-0.172L6.5,14.207c-0.236-0.236-0.236-0.618,0-0.854c0.236-0.236,0.618-0.236,0.854,0 l1.292,1.292l2.646-2.646c0.236-0.236,0.618-0.236,0.854,0c0.236,0.236,0.236,0.618,0,0.854L9.172,16.172z M15.5,10.207 c-0.236,0.236-0.618,0.236-0.854,0L12,6.854L13.292,5.56c0.236-0.236,0.618-0.236,0.854,0c0.236,0.236,0.236,0.618,0,0.854 L12.854,8l2.646,2.646c0.236,0.236,0.236,0.618,0,0.854C16.118,10.443,15.736,10.443,15.5,10.207z M17.573,4.427 c-0.115-0.115-0.268-0.175-0.427-0.172c-0.159-0.003-0.311,0.057-0.427,0.172l-1.292,1.292l2.646,2.646 c0.236,0.236,0.236,0.618,0,0.854c-0.236,0.236-0.618,0.236-0.854,0L15.5,6.854L17.146,5.207c0.236-0.236,0.618-0.236,0.854,0 C17.809,3.809,17.809,4.291,17.573,4.427z"/>
-            </svg>
+            <i class="fa-brands fa-whatsapp text-xl"></i>
           </a>
         </li>
   
@@ -182,7 +175,7 @@ style="background-image: url(https://images.pexels.com/photos/7426867/pexels-pho
 
   <!-- SPINER -->
 
-  <div  id="spinner" class="fixed top-0 left-0 w-full h-screen flex items-center justify-center bg-gray-800 bg-opacity-50 z-50 hidden">
+  <div  id="spinner" class="fixed top-0 left-0 w-full h-screen flex items-center justify-center bg-gray-800 bg-opacity-50 z-50 ">
 <div role="status">
     <svg aria-hidden="true" class="inline w-10 h-10 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>

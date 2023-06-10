@@ -86,18 +86,23 @@ if($cur_page == 'restaurant'){
     
     <!-- ON PROMO BANNER -->
     <div
-    class="flex items-center justify-between gap-4 bg-red-600 px-4 py-3 text-white"
+    class="flex items-center justify-between gap-4 bg-red-600 px-4 py-2 text-white"
   >
-    <p class="text-sm font-medium">
+ <div class="div">
+ <p class="text-sm font-medium ">
+      Announcement <i class="fa-solid fa-bullhorn mx-2"></i>:
+    </p>
+    <p class="text-xs ">
       Hurray 🎉🎉! We are on Promotion
       <a href="#" class="inline-block underline">All Meals are 50% off😎🥧!</a>
     </p>
+ </div>
   
     <button
       aria-label="Dismiss"
       class="shrink-0 rounded-lg bg-black/10 p-1 transition hover:bg-black/20"
     >
-      <svg
+      <!-- <svg
         xmlns="http://www.w3.org/2000/svg"
         class="h-5 w-5"
         viewBox="0 0 20 20"
@@ -108,7 +113,8 @@ if($cur_page == 'restaurant'){
           d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
           clip-rule="evenodd"
         />
-      </svg>
+      </svg> -->
+      <i class="fa-solid fa-utensils fa-bounce"></i>
     </button>
   </div>
 
@@ -134,7 +140,7 @@ if($cur_page == 'restaurant'){
 <div class="w-full header_top pl-2 py-4 flex justify-between items-center h-12 ">
   <!-- menu_btn -->
   <div class="m_btn flex justify-center items-center ml-4">
-    <i class="fa-solid fa-bars text-2xl"  onclick="openNav()"></i>
+    <i class="fa-solid fa-bars text-2xl cursor-pointer"  onclick="openNav()"></i>
     <div class="mx-4">
         <i class="fa-solid fa-magnifying-glass text-xl cursor-pointer" onclick="openSearch()"></i>
        </div>
@@ -143,8 +149,8 @@ if($cur_page == 'restaurant'){
 <div class=" w-full h-full flex justify-center items-center">
    <div class="">
    <a href="index"> 
-      <img src="assets/images/logo.webp" alt="mmb" class="w-[200px] pt-4 mb-4">
-        <!-- <p class="text-2xl lg:text-4xl">Sheyonce Fashion Boutique</p> -->
+      <!-- <img src="assets/images/logo.webp" alt="mmb" class="w-[200px] pt-4 mb-4"> -->
+        <p class="text-2xl lg:text-4xl">CLAUDIA FOODS</p>
   </a>
 </div>
 </div>
@@ -153,7 +159,7 @@ if($cur_page == 'restaurant'){
 <div class="cart flex justify-center items-center">
 
 <div class="cartert flex mr-4">
-<a href="#" title="cart" class="cart-box"><i class="fa-solid fa-bag-shopping text-xl"></i></i> </a>
+<a href="#" title="cart" class="cart-box"><i class="fa-solid fa-bag-shopping hover:text-red-500 text-xl"></i></i> </a>
     <p  class="cart-info cart-total  bg-red-500 text-white w-4 h-4 text-center rounded-md  text-xs">
                    <?php
             if(isset($_SESSION["products"])){
@@ -217,7 +223,7 @@ if($cur_page == 'restaurant'){
         <p style="font-size:1.5rem;" class="mt-4">Sheyonce Fashion</p>
      </a>
         <div class="flex justify-center items-center mb-2">
-         <a href="https://wa.me/971508322923" class="mx-2"><i class="hover:text-[#A23445] transition-all ease-linear fa-brands fa-whatsapp"></i></a>
+         <a href="https://wa.me/237694654634" class="mx-2"><i class="hover:text-[#A23445] transition-all ease-linear fa-brands fa-whatsapp"></i></a>
          <a href="" class="mx-2"><i class="hover:text-[#A23445] transition-all ease-linear fa-brands fa-facebook"></i></a>
          <a href="" class="mx-2"><i class="hover:text-[#A23445] transition-all ease-linear fa-brands fa-instagram"></i></a>
          </div>

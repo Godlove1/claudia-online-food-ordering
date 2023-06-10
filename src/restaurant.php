@@ -15,7 +15,7 @@ if (isset($_GET['page_no']) && $_GET['page_no']!="") {
 		$page_no = 1;
         }
 
-	$total_records_per_page = 16;
+	$total_records_per_page = 4;
     $offset = ($page_no-1) * $total_records_per_page;
 	$previous_page = $page_no - 1;
 	$next_page = $page_no + 1;
@@ -33,14 +33,14 @@ if (isset($_GET['page_no']) && $_GET['page_no']!="") {
 <!-- Categoris -->
 <div class="flex justify-around items-center flex-wrap mb-8 p-4 ">
  <!-- cateogry template -->
- <div class="cat-temp-wrapper relative border shadow-lg  w-[80px] h-[80px] rounded-full overflow-hidden">
+ <div class="cat-temp-wrapper relative border shadow-lg  w-[100px] h-[100px] rounded-full overflow-hidden">
     <a href="restaurant">
-        <div class="cat-bg w-full ">
+        <div class="cat-bg w-full h-full">
             <img src="https://images.pexels.com/photos/9609868/pexels-photo-9609868.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="w-full h-full object-cover">
         </div>
         <div class="name_cat absolute bg-black w-full h-full top-0 bg-opacity-30">
                 <div class="w-full h-full flex justify-center items-center">
-                    <p class="text-white capitalize">All</p>
+                    <p class="text-white capitalize">All Food</p>
                 </div>
         </div>
     </a>
@@ -56,17 +56,18 @@ if (isset($_GET['page_no']) && $_GET['page_no']!="") {
 foreach ($db->query($get_cats) as $cats) {
     $cid=$cats['id'];
     $cname=$cats['cat_name'];
+    $ca_i=$cats['cat_image'];
     ?>
 
     <!-- cateogry template -->
-    <div class="cat-temp-wrapper relative <?=($acat == $cid)?'border-red-500':''?> border  shadow-lg  w-[80px] h-[80px] rounded-full overflow-hidden">
+    <div class="cat-temp-wrapper relative <?=($acat == $cid)?'border-red-500':''?> border  shadow-lg  w-[100px] h-[100px] rounded-full overflow-hidden">
         <a href="restaurant?cat=<?php echo $cid;?>">
-            <div class="cat-bg w-full h-full ">
-                <img src="assets/images/cats/<?php echo $ca_i;?>" alt="" class="w-full h-full object-cover">
+        <div class="cat-bg w-full h-full ">
+      <img src="assets/images/cats/<?php echo $ca_i;?>" alt="<?php echo ucwords($cname) ?>" class="w-full h-full object-cover">
             </div>
-            <div class="name_cat absolute <?=($acat == $cid)?'bg-red-500':' bg-black'?>  w-full h-full top-0 bg-opacity-30">
-                    <div class="w-full h-full flex justify-center items-center">
-                        <p class="text-white capitalize"><?php echo ucwords($cname) ?></p>
+            <div class="name_cat absolute <?=($acat == $cid)?'bg-red-500':' bg-black'?>  w-full h-full top-0 bg-opacity-50">
+                    <div class="w-full h-full flex justify-center items-center p-2">
+                        <p class="text-white capitalize text-center"><?php echo ucwords($cname) ?></p>
                     </div>
             </div>
         </a>
@@ -80,15 +81,16 @@ foreach ($db->query($get_cats) as $cats) {
  foreach ($db->query($get_cats) as $cats) {
      $cid=$cats['id'];
      $cname=$cats['cat_name'];
+     $ca_i=$cats['cat_image'];
 ?>
     <!-- cateogry template -->
-    <div class="cat-temp-wrapper relative <?=($acat == $cid)?'border-red-500':''?> border  shadow-lg  w-[80px] h-[80px] rounded-full overflow-hidden">
+    <div class="cat-temp-wrapper relative <?=($acat == $cid)?'border-red-500':''?> border  shadow-lg  w-[100px] h-[100px] rounded-full overflow-hidden">
         <a href="restaurant?cat=<?php echo $cid;?>">
-            <div class="cat-bg w-full h-full ">
-                <img src="assets/images/cats/<?php echo $ca_i;?>" alt="" class="w-full h-full object-cover">
+        <div class="cat-bg w-full h-full ">
+      <img src="assets/images/cats/<?php echo $ca_i;?>" alt="<?php echo ucwords($cname) ?>" class="w-full h-full object-cover">
             </div>
             <div class="name_cat absolute <?=($acat == $cid)?'bg-red-500':' bg-black'?>  w-full h-full top-0 bg-opacity-30">
-                    <div class="w-full h-full flex justify-center items-center">
+                    <div class="w-full h-full flex justify-center items-center p-2">
                         <p class="text-white capitalize text-center"><?php echo ucwords($cname) ?></p>
                     </div>
             </div>
@@ -109,17 +111,44 @@ foreach ($db->query($get_cats) as $cats) {
 
 <!-- Featured -->
 <div class="cat_name w-full flex justify-center items-center px-4 my-12">
-    <div class="font-bold text-2xl  "><h2>Showing <span>All Meals 🥧</span> 😋</h2></div>
+    <div class="font-bold text-2xl  "><h2>Showing <span>All
+      
+    <?php
+ if(isset($_GET['cat'])){
+  $acat=$_GET['cat'];
+
+  $get_cats=mysqli_query($conn,"SELECT * FROM tbl_category WHERE id =$acat");
+if ( $row=mysqli_fetch_assoc($get_cats)) {
+  
+   echo $row['cat_name'];
+}
+}else{
+  echo 'Meals 🥧';
+}
+?>
+  
+  </span> 😋</h2></div>
 </div>
 <!-- BEST SELLING -->
-<div class=" w-full gap-2 lg:gap-6 lg:space-y-4 space-y-8 columns-1 px-8 pt-8 lg:p-2 lg:columns-5 ">
 
 <?php
-//List products from database
-$resu = $db->query("SELECT * FROM products_list  order by rand() limit 0,5");
-$counta =mysqli_num_rows($resu);
-if ($counta>0){
-while($row = $resu->fetch_assoc()) {
+  if(isset($_GET['cat']) && strlen($_GET['cat'])<3){
+    $type_cat=$_GET['cat'];
+    ?>
+    <div class=" w-full gap-2 lg:gap-6 lg:space-y-4 space-y-8 columns-1 px-8 pt-8 lg:p-2 lg:columns-5 ">
+      <?php
+    $result_count = mysqli_query($conn,"SELECT COUNT(*) As total_records FROM `products_list` WHERE product_category=$type_cat  AND  available != 0");
+    $total_records = mysqli_fetch_array($result_count);
+    $total_records = $total_records['total_records'];
+    $total_no_of_pages = ceil($total_records / $total_records_per_page);
+    $second_last = $total_no_of_pages - 1;   
+    
+$sql = "SELECT * FROM products_list WHERE product_category=$type_cat AND  available != 0 order by product_code DESC LIMIT $offset, $total_records_per_page";
+//Execute the qUery
+$res = mysqli_query($conn, $sql);
+$count = mysqli_num_rows($res);
+if($count>0){
+  while($row=mysqli_fetch_assoc($res)) {
     $prod_id=$row["product_code"];
     $name=$row["product_name"];
     $prod_imgs=$row["product_image"];
@@ -127,98 +156,87 @@ while($row = $resu->fetch_assoc()) {
     $pprice= $row["product_pprice"];
     $prod_img =explode(",",$prod_imgs);
     $promo=$row["promo"];
-
-    ?>
-  <!-- TEMPLATE -->
+    $prod_cat = $row['product_category'];
+  ?>
+   <!-- TEMPLATE -->
   <?php
   include 'partials/template.php';
   ?>
     <!-- TEMPLATE -->
-    <?php } }else{
-                    echo 'No food';
-              } ?>
-    </div>
 
+ <?php
+}
+?>
+<!-- load more posts -->
+</div>
+<!-- pagination -->
+<?php
+      include 'partials/page_counter.php';
+  ?>
+
+<?php
+}else{
+  ?>
+  </div>
+<div class="flex justify-center items-center">
+  <p>No Food availbale for this category, try another!</p>
+</div>
+
+  <?php
+} } else{
+?>
+<div class=" w-full gap-2 lg:gap-6 lg:space-y-4 space-y-8 columns-1 px-8 pt-8 lg:p-2 lg:columns-5 ">
+  <?php
+  $result_count = mysqli_query($conn,"SELECT COUNT(*) As total_records FROM `products_list`");
+  $total_records = mysqli_fetch_array($result_count);
+  $total_records = $total_records['total_records'];
+  $total_no_of_pages = ceil($total_records / $total_records_per_page);
+  $second_last = $total_no_of_pages - 1;   
+  
+$sql = "SELECT * FROM products_list order by product_code DESC LIMIT $offset, $total_records_per_page";
+//Execute the qUery
+$res = mysqli_query($conn, $sql);
+$count = mysqli_num_rows($res);
+if($count>0){
+while($row=mysqli_fetch_assoc($res)) {
+  $prod_id=$row["product_code"];
+  $name=$row["product_name"];
+  $prod_imgs=$row["product_image"];
+  $price= $row["product_price"];
+  $pprice= $row["product_pprice"];
+  $prod_img =explode(",",$prod_imgs);
+  $promo=$row["promo"];
+  $prod_cat = $row['product_category'];
+?>
+ <!-- TEMPLATE -->
+ <?php
+  include 'partials/template.php';
+  ?>
+    <!-- TEMPLATE -->
+
+<?php
+}
+?>
+<!-- load more posts -->
+</div>
+</div>
 
         <!-- PAGINATION -->
-<div class="my-8 lg:mt-12 lg:text-2xl">
-    <ol class="flex justify-center gap-1 text-xs font-medium">
-        <li>
-          <a
-            href="#"
-            class="inline-flex h-8 w-8 items-center justify-center rounded border border-gray-100 bg-white text-gray-900 rtl:rotate-180"
-          >
-            <span class="sr-only">Prev Page</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-3 w-3"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                clip-rule="evenodd"
-              />
-            </svg>
-          </a>
-        </li>
-      
-        <li>
-          <a
-            href="#"
-            class="block h-8 w-8 rounded border border-gray-100 bg-white text-center leading-8 text-gray-900"
-          >
-            1
-          </a>
-        </li>
-      
-        <li
-          class="block h-8 w-8 rounded border-red-600 bg-red-600 text-center leading-8 text-white"
-        >
-          2
-        </li>
-      
-        <li>
-          <a
-            href="#"
-            class="block h-8 w-8 rounded border border-gray-100 bg-white text-center leading-8 text-gray-900"
-          >
-            3
-          </a>
-        </li>
-      
-        <li>
-          <a
-            href="#"
-            class="block h-8 w-8 rounded border border-gray-100 bg-white text-center leading-8 text-gray-900"
-          >
-            4
-          </a>
-        </li>
-      
-        <li>
-          <a
-            href="#"
-            class="inline-flex h-8 w-8 items-center justify-center rounded border border-gray-100 bg-white text-gray-900 rtl:rotate-180"
-          >
-            <span class="sr-only">Next Page</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-3 w-3"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                clip-rule="evenodd"
-              />
-            </svg>
-          </a>
-        </li>
-      </ol>
+<?php
+  include 'partials/page_counter.php';
+  ?>
+
+
+<?php
+}else{
+?>
+
+<div class="flex justify-center items-center">
+  <p>No food available</p>
 </div>
+  <?php
+} }
+    ?>
 
 
 

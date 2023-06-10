@@ -20,11 +20,12 @@ while($row=mysqli_fetch_assoc($res))
 {//get the values from individual columns
     $id = $row['product_code'];
     $price = $row['product_price'];
+    $promo_price = $row['product_pprice'];
     $title = $row['product_name'];
     $prod_imgs = $row['product_image'];
     $availability = $row['available'];
     $prod_img =explode(",",$prod_imgs);
-
+    $promo = $row['promo'];
     ?>
     <!--template-->
     <tr>
@@ -50,9 +51,15 @@ while($row=mysqli_fetch_assoc($res))
                       </td>
   
                      
-                       <td class="w-20">
-                       <?php echo number_format($price,0); ?><span class="">F</span>
-                      </td>
+                      <td class="w-20">
+                     <?php if($promo == 1){
+                      echo ' <p class="text-green-500 text-xs font-bold">Food is On Promo:</p>';
+                      echo number_format($promo_price,0)."F";
+                     }else{
+                      echo number_format($price,0)."F";
+                     }
+                    ?>
+                    </td>
   
                       <td class="w-20">
   <a href="update-prod?id=<?php echo $id; ?>" class="w-full text-center rounded bg-green-500 hover:bg-green-700 p-2 "><i class="fa-solid fa-pen-to-square text-xl text-white"></i></a>
@@ -85,11 +92,12 @@ while($row=mysqli_fetch_assoc($res))
 {//get the values from individual columns
     $id = $row['product_code'];
     $price = $row['product_price'];
+    $promo_price = $row['product_pprice'];
     $title = $row['product_name'];
     $prod_imgs = $row['product_image'];
-     $availability = $row['available'];
+    $availability = $row['available'];
     $prod_img =explode(",",$prod_imgs);
-
+    $promo = $row['promo'];
     ?>
   <!--template-->
   <tr>
@@ -115,8 +123,14 @@ echo "<div class='text-red-500'>Image not Added.</div>";
                     </td>
 
                    
-                     <td class="w-20">
-                     <?php echo number_format($price,0); ?><span class="">F</span>
+                    <td class="w-20 font-bold">
+                     <?php if($promo == 1){
+                      echo ' <p class="text-green-500 text-xs">Food is On Promo:</p>';
+                      echo number_format($promo_price,0)."F";
+                     }else{
+                      echo number_format($price,0)."F";
+                     }
+                    ?>
                     </td>
 
                     <td class="w-20">

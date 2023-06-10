@@ -104,8 +104,8 @@ foreach ($db->query($get_cats) as $cats) {
     <select name='other_cat' class="text-center border-2 border-gray-500 rounded-md p-2 ">
         <option value="Default sorting">--Select--</option>
         <option value="0">Unavailable</option>
-        <!-- <option value="1">New Arrivals</option>
-        <option value="2">Best Sellers</option> -->
+        <option value="1">On Promo</option>
+        <!-- <option value="2">Best Sellers</option> -->
     </select>
 </form>
 </div>

@@ -45,7 +45,7 @@ $sort_cat =$_POST['other_cat'];
 if($sort_cat == 0){
     echo 'Unavailable dishes';
 }elseif($sort_cat == 1){
-    echo 'New Arrivals';
+    echo 'Food on Promo';
 }else{
     echo 'Best Sells';
 }
@@ -63,8 +63,8 @@ if($sort_cat == 0){
     <select name='other_cat' class="text-center border-2 border-gray-500 rounded-md p-1">
         <option value="Default sorting">--select--</option>
         <option value="0">Unavailable</option>
-        <!-- <option value="1">New Arrivals</option>
-        <option value="2">Best Sellers</option> -->
+        <option value="1">On Promo</option>
+        <!-- <option value="2">Best Sellers</option> -->
     </select>
 </form>
 </div>

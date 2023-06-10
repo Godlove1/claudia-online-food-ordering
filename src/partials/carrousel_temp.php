@@ -1,5 +1,5 @@
 <!-- prod_variant_1 -->
-<div class="prod_wrapper rounded  shadow-md overflow-hidden transition-all duration-200 ease-linear hover:shadow-none ">
+<div class="prod_wrapper w-[300px] rounded-md  shadow-sm overflow-hidden hover:shadow-none ">
     <!-- image -->
     <div class="image_wrapper ">
         <a href="#" class="relative">
@@ -22,9 +22,10 @@
                 </p>
             </div>
         </div>
+
          <!-- PROMO STATUS-->
          <div class="category_name absolute top-0 left-0">
-            <div class="ca bg-red-500 px-2 shadow-md text-white font-bold">
+            <div class="ca bg-black px-2 shadow-md text-white font-bold">
                 <p>
         <?php
          if($promo == 0){
@@ -49,7 +50,7 @@
                         <p class="text-center"><?php echo $name; ?></p>
                         <!-- price -->
                         <div class="price">
-            <?php
+                        <?php
                 if($promo == 0){
                     echo '<p class="price"><span class="text-xs">F CFA </span><span class="font-bold text-xl ">'.number_format($price,1).'</span></p>';
                 }else{
@@ -57,7 +58,6 @@
                 }
 
             ?>
-
                         </div>
                     </div>
                 </div>

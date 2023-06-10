@@ -14,18 +14,21 @@ ob_start();
 
   // Create a new image from file
   switch($mime){
-      case 'image/jpeg':
-          $image = imagecreatefromjpeg($source);
-          break;
-      case 'image/png':
-          $image = imagecreatefrompng($source);
-          break;
-      case 'image/gif':
-          $image = imagecreatefromgif($source);
-          break;
-      default:
-          $image = imagecreatefromjpeg($source);
-  }
+    case 'image/jpeg':
+        $image = imagecreatefromjpeg($source);
+        break;
+    case 'image/png':
+        $image = imagecreatefrompng($source);
+        break;
+    case 'image/gif':
+        $image = imagecreatefromgif($source);
+        break;
+    case 'image/webp':
+        $image = imagecreatefromwebp($source);
+        break;
+    default:
+        $image = imagecreatefromjpeg($source);
+}
 
   // Save the compressed image
   imagejpeg($image, $destination, $quality);
@@ -33,7 +36,8 @@ ob_start();
 
 // Check if the user has submitted the form
 if(isset($_POST['add'])) {
-  $price = $_POST['price'];
+  $name = mysqli_real_escape_string($conn,$_POST['name']);
+  $price =mysqli_real_escape_string($conn,$_POST['price']);
   $category = $_POST['type'];
   $Available = $_POST['Available'];
   // $tag = $_POST['tag'];
@@ -45,7 +49,7 @@ if(isset($_POST['add'])) {
 // Create an array to store the compressed image names
 $compressed_images = array();
 // Allowed file extensions
-$allowed_extensions = array('jpg', 'jpeg', 'png', 'gif');
+$allowed_extensions = array('jpg', 'jpeg', 'png', 'gif','webp');
 // Loop through each uploaded file
 for($i=0;$i<$countfiles;$i++){
     // Get the file name
@@ -62,7 +66,7 @@ for($i=0;$i<$countfiles;$i++){
           <div class="py-1"><svg class="fill-current h-6 w-6 text-teal-500 mr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"/></svg></div>
           <div>
             <p class="font-bold">Something went Wrong</p>
-            <p class="text-sm"> Only JPG, JPEG, PNG, and GIF files are allowed.</p>
+            <p class="text-sm"> Only JPG, JPEG, PNG, Webp and GIF files are allowed.</p>
           </div>
         </div>
       </div>
@@ -79,7 +83,8 @@ $compressed_images_string = implode(",", $compressed_images);
 
   // Insert data into database
   $sql2 = "INSERT INTO products_list SET
-   product_price = $price,
+        product_name = '$name',
+        product_price = $price,
         product_category = '$category',
         available = '$Available',
         Product_image = '$compressed_images_string'
@@ -148,11 +153,11 @@ include 'partials/header-add.php';
             ?>
 
 
-    <!-- <div class="">
+    <div class="">
         <label class="block mb-1 font-medium" for="forms-labelOverInputCode">Name</label>
         <input class="w-full h-10 px-3 text-base placeholder-gray-300 border border-slate-400 rounded-lg focus:outline-none" type="text" placeholder="enter name" name="name" required/>
       </div>
-      -->
+     
 
       <div class="">
         <label class="block mb-1 font-medium" for="forms-labelOverInputCode">Price</label>
@@ -187,7 +192,7 @@ $title = $row['cat_name'];?>
 
       <div class=" flex items-center">
         <label class="mr-2 font-medium" for="forms-labelOverInputCode">Is it Available ?</label>
-        <input class="mx-1" type="radio" value="1"  name="Available"/><span>Yes</span>
+        <input class="mx-1" type="radio" value="1"  name="Available" checked/><span>Yes</span>
         <input class="mx-1" type="radio" value="0" name="Available"/><span>No</span>
       </div>
       

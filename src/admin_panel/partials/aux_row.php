@@ -2,13 +2,13 @@
 <?php
 if($sort_cat != 0 ){
     $prid=$sort_cat;
-$result_count = mysqli_query($conn,"SELECT COUNT(*) As total_records FROM `products_list` WHERE best_or_new=$prid ");
+$result_count = mysqli_query($conn,"SELECT COUNT(*) As total_records FROM `products_list` WHERE promo=$prid ");
 $total_records = mysqli_fetch_array($result_count);
 $total_records = $total_records['total_records'];
 $total_no_of_pages = ceil($total_records / $total_records_per_page);
 $second_last = $total_no_of_pages - 1;
 //Create a SQL Query to Get all the Food
-$sql = "SELECT * FROM products_list WHERE best_or_new=$prid  order by product_code DESC LIMIT $offset, $total_records_per_page";
+$sql = "SELECT * FROM products_list WHERE promo=$prid  order by product_code DESC LIMIT $offset, $total_records_per_page";
 //Execute the qUery
 $res = mysqli_query($conn, $sql);
 //Count Rows to check whether we have foods or not
@@ -19,7 +19,7 @@ if($count>0){
 while($row=mysqli_fetch_assoc($res))
 {//get the values from individual columns
     $id = $row['product_code'];
-    $price = $row['product_price'];
+    $price = $row['product_pprice'];
     $title = $row['product_name'];
     $prod_imgs = $row['product_image'];
     $availability = $row['available'];
@@ -51,8 +51,9 @@ while($row=mysqli_fetch_assoc($res))
                       </td>
   
                      
-                       <td class="w-20">
-                       <?php echo number_format($price,0); ?><span class="">F</span>
+                       <td>
+                        <span class="text-xs">promo price :</span>
+                       <?php echo number_format($price,0) ."F"; ?>
                       </td>
   
                       <td class="w-20">

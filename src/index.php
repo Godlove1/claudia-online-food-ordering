@@ -29,7 +29,7 @@ include 'partials/hero.php';
 
 </div>
 <!-- BEST SELLING -->
-<div class=" w-full gap-2 lg:gap-6 lg:space-y-4 space-y-8 columns-1 px-8 pt-8 lg:p-2 lg:columns-5 ">
+<div class=" w-full gap-2 lg:gap-6 lg:space-y-4 space-y-8 columns-1 px-8 pt-8 lg:p-2 lg:columns-5 md:columns-3">
 
 
 <?php
@@ -45,7 +45,7 @@ while($row = $resu->fetch_assoc()) {
     $pprice= $row["product_pprice"];
     $prod_img =explode(",",$prod_imgs);
     $promo=$row["promo"];
-
+    $prod_cat = $row['product_category'];
     ?>
   <!-- TEMPLATE -->
   <?php
@@ -98,11 +98,11 @@ while($row = $resu->fetch_assoc()) {
     $pprice= $row["product_pprice"];
     $prod_img =explode(",",$prod_imgs);
     $promo=$row["promo"];
-
+    $prod_cat = $row['product_category'];
     ?>
   <!-- TEMPLATE -->
   <?php
-  include 'partials/template.php';
+  include 'partials/carrousel_temp.php';
   ?>
     <!-- TEMPLATE -->
     <?php } }else{
@@ -122,7 +122,7 @@ while($row = $resu->fetch_assoc()) {
 
 </div>
 <!-- BEST SELLING -->
-<div class=" w-full gap-2 lg:gap-6 lg:space-y-4 space-y-8 columns-1 px-8 pt-8 lg:p-2 lg:columns-5 ">
+<div class=" w-full gap-2 lg:gap-6 lg:space-y-4 space-y-8 columns-1 px-8 pt-8 lg:p-2 lg:columns-5 md:columns-3 ">
 
 <?php
 //List products from database
@@ -137,7 +137,7 @@ while($row = $resu->fetch_assoc()) {
     $pprice= $row["product_pprice"];
     $prod_img =explode(",",$prod_imgs);
     $promo=$row["promo"];
-
+    $prod_cat = $row['product_category'];
     ?>
   <!-- TEMPLATE -->
   <?php
