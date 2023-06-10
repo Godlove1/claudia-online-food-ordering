@@ -61,8 +61,8 @@ foreach ($db->query($get_cats) as $cats) {
     <!-- cateogry template -->
     <div class="cat-temp-wrapper relative <?=($acat == $cid)?'border-red-500':''?> border  shadow-lg  w-[80px] h-[80px] rounded-full overflow-hidden">
         <a href="restaurant?cat=<?php echo $cid;?>">
-            <div class="cat-bg w-full ">
-                <img src="assets/images/cats/<?php echo $ca_i;?>" alt="" class="">
+            <div class="cat-bg w-full h-full ">
+                <img src="assets/images/cats/<?php echo $ca_i;?>" alt="" class="w-full h-full object-cover">
             </div>
             <div class="name_cat absolute <?=($acat == $cid)?'bg-red-500':' bg-black'?>  w-full h-full top-0 bg-opacity-30">
                     <div class="w-full h-full flex justify-center items-center">
@@ -84,8 +84,8 @@ foreach ($db->query($get_cats) as $cats) {
     <!-- cateogry template -->
     <div class="cat-temp-wrapper relative <?=($acat == $cid)?'border-red-500':''?> border  shadow-lg  w-[80px] h-[80px] rounded-full overflow-hidden">
         <a href="restaurant?cat=<?php echo $cid;?>">
-            <div class="cat-bg w-full ">
-                <img src="assets/images/cats/<?php echo $ca_i;?>" alt="" class="">
+            <div class="cat-bg w-full h-full ">
+                <img src="assets/images/cats/<?php echo $ca_i;?>" alt="" class="w-full h-full object-cover">
             </div>
             <div class="name_cat absolute <?=($acat == $cid)?'bg-red-500':' bg-black'?>  w-full h-full top-0 bg-opacity-30">
                     <div class="w-full h-full flex justify-center items-center">

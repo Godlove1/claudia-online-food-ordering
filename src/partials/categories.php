@@ -12,12 +12,12 @@ foreach ($db->query($get_cats) as $cats) {
     <!-- cateogry template -->
     <div class="cat-temp-wrapper relative border shadow-lg  w-[100px] h-[100px] rounded-full overflow-hidden">
         <a href="restaurant?cat=<?php echo $cid;?>">
-            <div class="cat-bg w-full ">
-      <img src="assets/images/cats/<?php echo $ca_i;?>" alt="<?php echo ucwords($cname) ?>" class="">
+            <div class="cat-bg w-full h-full ">
+      <img src="assets/images/cats/<?php echo $ca_i;?>" alt="<?php echo ucwords($cname) ?>" class="w-full h-full object-cover">
             </div>
             <div class="name_cat absolute bg-black w-full h-full top-0 bg-opacity-30 hover:bg-red-500 transition-all duration-300 ease-in">
-                    <div class="w-full h-full flex justify-center items-center">
-                        <p class="text-white capitalize"><?php echo ucwords($cname) ?></p>
+                    <div class="w-full h-full flex justify-center items-center p-2">
+                        <p class="text-white text-center capitalize"><?php echo ucwords($cname) ?></p>
                     </div>
             </div>
         </a>
